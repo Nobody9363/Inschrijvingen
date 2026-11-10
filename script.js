@@ -1,0 +1,4 @@
+document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
+const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('nav');if(toggle&&nav)toggle.addEventListener('click',()=>nav.classList.toggle('open'));
+const params=new URLSearchParams(location.search);const ticket=params.get('ticket');const select=document.querySelector('#ticket');if(ticket&&select&&[...select.options].some(o=>o.value===ticket||o.text===ticket))select.value=ticket;
+document.querySelectorAll('form').forEach(form=>form.addEventListener('submit',e=>{const a=form.querySelector('#email');const b=form.querySelector('#email2');if(a&&b&&a.value.trim().toLowerCase()!==b.value.trim().toLowerCase()){e.preventDefault();b.setCustomValidity('De e-mailadressen komen niet overeen.');b.reportValidity();}else if(b){b.setCustomValidity('');}}));
